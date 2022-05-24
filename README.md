@@ -4,12 +4,12 @@ This is a collection of coding challenges that I've completed, or one or two tha
 
 
 ### Completed:
-<strong> Leetcode <strong>
+<strong> Leetcode <strong> \
 1-two-sums.js \
 9-palidrome-number.js \
 13-roman-to-integar.js \
 
 
 ### WIP:
-<strong> Leetcode <strong>
+<strong> Leetcode <strong> \
 14-longest-common-prefix.js \
