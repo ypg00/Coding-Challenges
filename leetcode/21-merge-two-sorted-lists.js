@@ -24,26 +24,58 @@
 
 mergeTwoLists(list1, list2);
 
+// 2nd go at it
+
 function mergeTwoLists(list1, list2) {
-	let list3 = [];
-	for (let i = 0; i < list1.length;) {
-	   	for (let j = 0; i < list2.length;) {
-	   		if (list1[i] < list2[j] || list2[j] === undefined) {
-	   			list3.push(list1[i]);
-	   			i++;
-	   		} else if (list1[i] > list2[j] || list1[i] === undefined) {
-	   			list3.push(list2[j]);
-	   			j++;
-	   		} else {
-	   			list3.push(list1[i], list2[j]);
-	   			i++;
-	   			j++;
-	   		}
-	   	}
+	let result = [];
+	while (list1.length > 0 || list2.length > 0) {
+		if (list1.length === 0) {
+			result.push(list2.shift());
+		} else if (list2.length === 0) {
+			result.push(list1.shift());
+		} else if (list1[0] < list2[0]) {
+			result.push(list1.shift());
+		} else if (list1[0] > list2[0]) {
+			result.push(list2.shift());
+		} else if (list1[0] === list2[0]) {
+			result.push(list1.shift());
+			result.push(list2.shift());
+		} else {
+			break;
+		}
 	}
-	console.log(`list3: ${list3}`);
-	return list3;
+	// console.log(result);
+	return result;
 }
+
+
+// 1st attempt
+
+// function mergeTwoLists(list1, list2) {
+// 	let list3 = [];
+// 	if (list1.length === 0 && list2.length > 0) {
+// 		return console.log(list2);
+// 	} else if (list1.length > 0 && list2.length === 0) {
+// 		return console.log(list1); 
+// 	} else {
+// 		for (let i = 0; i < list1.length;) {
+// 			for (let j = 0; j < list2.length;) {
+// 				if (list1[i] < list2[j]) {
+// 					list3.push(list1[i]);
+// 					i++;
+// 				} else if (list1[i] > list2[j]) {
+// 					list3.push(list2[j]);
+// 					j++;
+// 				} else {
+// 					list3.push(list1[i], list2[j]);
+// 					i++;
+// 					j++;
+// 				}
+// 			}
+// 		}
+// 	}
+// 	return console.log(list3);
+// }
 
 /*
 21. Merge Two Sorted Lists
