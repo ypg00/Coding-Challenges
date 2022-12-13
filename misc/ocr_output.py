@@ -1,14 +1,3 @@
-# S = 'A12566733Le'
-# T = '12566733pL1'
-# S = '10a'
-# T = 'a10'
-# S = '3x2x'
-# T = '7'
-# S = '1B1D'
-# T = 'ABCD'
-# S = 'ba1'
-# T = '1Ad'
-
 def solution(S: str, T: str):
 
     # Creates lists for each input str, which consist of single letter elements and integars 
@@ -80,5 +69,3 @@ def solution(S: str, T: str):
 
     # Second sub-function call
     return compare_lists(S_deconstructed, T_deconstructed)
-
-print(solution(S, T))
