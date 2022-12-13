@@ -16,19 +16,19 @@ def solution(S: str, T: str):
             else:
                 if builder:
                     orc_output_deconstructed.append(int("".join(builder)))
-                    builder = []
+                    builder.clear()
                 orc_output_deconstructed.append(ocr_output[i])
 
         return orc_output_deconstructed
 
-    # Using the listed created by deconstruct_str(), compare them using pointers to
+    # Using the lists created by deconstruct_str(), compare using pointers to
     # determine whether they could be scans of the same passage.
 
     def compare_lists(S: list, T: list):
         # Pointers
         s, t = 0, 0
 
-        # Compare and move pointers, as long as both are in range
+        # Compare and move pointers, until one or both move out of range
         while s < len(S) and t < len(T):
             # Equal
             if S[s] == T[t]:
