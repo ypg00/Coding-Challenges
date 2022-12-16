@@ -3,8 +3,8 @@
 # nums = [2, 53, 12334, 3423, 535]
 # k = 3
 
-nums = [10,10,11,1,1]
-k = 3
+# nums = [10,10,11,1,1]
+# k = 3
 
 nums = [7,2,5,14,8]
 k = 3
@@ -12,32 +12,14 @@ k = 3
 def splitArray(nums: list[int], k: int) -> int:
     # Initialize pointers
     l, r = 0, len(nums) - 1
-    # Initialize sets for running sums
+    # Initialize lists for running sums
     L, R = [], []
-    # Initialize set for subarrays
+    # Initialize list for subarrays
     solution = []
-    # Calculate ideal block sum (i.e. smallest possible answer)
+    # Calculate ideal subarray sum (i.e. smallest possible answer)
     ideal_subarray_sum = sum(nums) / k
-
-    # Print of input and calculated variables:
-    # print(f'nums: {nums}')
-    # print(f'k: {k}')
-    # print(f'nums_sorted: {nums_sorted}')
-    # print(f'sum of nums: {sum(nums)}')
-    # print(f'ideal_subarray_sum: {ideal_subarray_sum}')
-    # print(f'split_list: {split_list}')
     
     while l <= r:
-        # Debug prints:
-        # print(f'l pointer: {l}')
-        # print(f'L set: {L}')
-        # print(f'r pointer: {r}')
-        # print(f'R set: {R}')
-        # print(f'solution list: {solution}')
-        # print(f'while_iterations: {while_iterations}')
-
-        # Algorithm 
-        
         L.append(nums[l])
         R.append(nums[r])
     
@@ -71,4 +53,4 @@ def splitArray(nums: list[int], k: int) -> int:
     solution.sort()
     return solution[-1]
 
-splitArray(nums, k)
+print(splitArray(nums, k))
