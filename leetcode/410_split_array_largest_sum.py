@@ -2,8 +2,6 @@
 
 # nums = [2, 53, 12334, 3423, 535]
 # k = 3
-# print(sum(nums))
-# print(sum(nums)/k)
 
 nums = [10,10,11,1,1]
 k = 3
